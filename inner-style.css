@@ -6,7 +6,7 @@
 /* ---- Jumbotron (page header) ---- */
 .jumbotron {
   background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 50%, #1e6a9a 100%);
-  background-image: url('images/kbb-vector.png'),
+  background-image: url('images/vector/kbb-vector.png'),
                     linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 50%, #1e6a9a 100%);
   background-size: cover, cover;
   background-position: right center, center;
