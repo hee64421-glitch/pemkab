@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KECAMATAN | Kabupaten Bandung Barat</title>
+  <meta name="description" content="Sejarah singkat lahirnya Kabupaten Bandung Barat sebagai hasil pemekaran dari Kabupaten Bandung." />
+  <link href="css/inter-font.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/fontawesome.min.css">
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .jumbotron {
+      background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 50%, #1e6a9a 100%);
+      background-image: url('images/kbb-vector.png'),
+                        linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 50%, #1e6a9a 100%);
+      background-size: cover, cover;
+      background-position: right center, center;
+      background-blend-mode: overlay;
+      padding: calc(var(--nav-height) + var(--top-height) + 48px) 0 48px;
+    }
+    .page-breadcrumb {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      color: rgba(255,255,255,0.7);
+      margin-bottom: 12px;
+    }
+    .page-breadcrumb a { color: rgba(255,255,255,0.7); }
+    .page-breadcrumb a:hover { color: #fff; }
+    .jumbotron h1 {
+      font-size: clamp(22px, 3.5vw, 36px);
+      font-weight: 800;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .page-detail {
+      background: #f5f5f5;
+      padding: 48px 0 80px;
+    }
+    .content-card {
+      background: #fff;
+      border-radius: 6px;
+      box-shadow: 0 1px 6px rgba(0,0,0,0.08);
+      padding: 36px 40px;
+      font-size: 15px;
+      line-height: 1.8;
+      color: #333;
+    }
+    .content-card p { margin-bottom: 14px; }
+    .content-card ul { padding-left: 20px; margin-bottom: 14px; }
+    .content-card ul li { margin-bottom: 6px; }
+    .content-heading {
+      font-weight: 700;
+      font-size: 16px;
+      color: #222;
+      margin-bottom: 18px;
+    }
+    @media (max-width: 768px) {
+      .content-card { padding: 24px 18px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Top Bar -->
+<div class="top-bar">
+  <div class="container top-bar-inner">
+    <div class="top-bar-left">
+      <span id="realtimeDate"><i class="fas fa-calendar-alt"></i> Memuat tanggal...</span>
+      <span><i class="fas fa-cloud-sun"></i> Ngamprah, Jawa Barat</span>
+    </div>
+    <div class="top-bar-right">
+      <a href="#" title="Facebook" class="social-top"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" title="Twitter" class="social-top"><i class="fab fa-twitter"></i></a>
+      <a href="#" title="Instagram" class="social-top"><i class="fab fa-instagram"></i></a>
+      <a href="#" title="YouTube" class="social-top"><i class="fab fa-youtube"></i></a>
+    </div>
+  </div>
+</div>
+
+<!-- Navbar -->
+<nav class="navbar scrolled" id="navbar">
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="images/logo-white.png" alt="Logo Kabupaten Bandung Barat" style="height: 40px; width: auto; object-fit: contain;" />
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button>
+    <ul class="nav-menu" id="navMenu">
+        <li class="nav-item"><a href="index.html" class="nav-link">Beranda</a></li>
+        <li class="nav-item has-dropdown">
+          <a href="#" class="nav-link">Profil <i class="fas fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="visi-misi.html">Visi &amp; Misi</a></li>
+            <li><a href="sejarah.html">Sejarah</a></li>
+            <li><a href="makna-logo.html">Makna Logo</a></li>
+          </ul>
+        </li>
+        <li class="nav-item has-dropdown">
+          <a href="#" class="nav-link">Pemerintahan <i class="fas fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="pimpinan-daerah.html">Pimpinan Daerah</a></li>
+            <li><a href="perangkat-daerah.html">Perangkat Daerah</a></li>
+            <li><a href="kecamatan.html">Kecamatan</a></li>
+          </ul>
+        </li>
+        <li class="nav-item has-dropdown">
+          <a href="#" class="nav-link">Sarana &amp; Prasarana <i class="fas fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="pendidikan.html">Pendidikan</a></li>
+            <li><a href="kesehatan.html">Kesehatan</a></li>
+            <li><a href="pasar.html">Pasar</a></li>
+            <li><a href="tempat-wisata.html">Tempat Wisata</a></li>
+          </ul>
+        </li>
+        <li class="nav-item has-dropdown">
+          <a href="#" class="nav-link">Layanan Data <i class="fas fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="dashboard-anggaran.html">Dashboard APBD</a></li>
+            <li><a href="https://opendata.bandungbaratkab.go.id/">Data Statistik</a></li>
+            <li><a href="dokumen-perencanaan.html">Dokumen Perencanaan</a></li>
+            <li><a href="dokumen-anggaran.html">Dokumen Anggaran</a></li>
+            <li><a href="rlppd.html">RLPPD 2023</a></li>
+          </ul>
+        </li>
+        <li class="nav-item has-dropdown">
+          <a href="#" class="nav-link">Media Center <i class="fas fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="news-article.html">Berita</a></li>
+            <li><a href="pengumuman.html">Pengumuman</a></li>
+          </ul>
+        </li>
+        <li class="nav-item has-dropdown">
+          <a href="#" class="nav-link">Agenda <i class="fas fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Kalender Agenda</a></li>
+            <li><a href="#">Pengumuman</a></li>
+          </ul>
+        </li>
+      </ul>
+  </div>
+</nav>
+
+<!-- Jumbotron -->
+<section class="jumbotron">
+  <div class="container">
+    <nav class="page-breadcrumb" aria-label="breadcrumb">
+      <a href="index.html">Beranda</a>
+      <span>&gt;</span>
+      <span>KECAMATAN</span>
+    </nav>
+    <h1>KECAMATAN</h1>
+  </div>
+</section>
+
+<!-- Page Content -->
+<section class="page-detail">
+  <div class="container">
+    <div class="content-card">
+<div class="table-responsive">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <th>No.</th>
+                                    <th>Nama</th>
+                                    <th>Alamat</th>
+                                    <th>Email</th>
+                                    <th>Website</th>
+                                    <th width="8%">#</th>
+                                </thead>
+                                <tbody>
+                                                                            <tr>
+                                            <td>1</td>
+                                            <td>Kecamatan Lembang</td>
+                                            <td>Jl. Kayu Ambon, Kayuambon, Kec. Lembang, Kabupaten Bandung Barat</td>
+                                            <td></td>
+                                            <td>https://www.instagram.com/kecamatanlembang/</td>
+                                            <td>
+                                                <a href="https://bandungbaratkab.go.id/instansi/kecamatan/kecamatan-lembang" class="btn btn-outline-success btn-sm"><i class="bi bi-eye"></i> Detail</a>
+                                            </td>
+                                        </tr>
+                                                                            <tr>
+                                            <td>2</td>
+                                            <td>Kecamatan Parongpong</td>
+                                            <td>Jl. Kolonel Masturi no.291, Cihanjuang Rahayu, Kecamatan Parongpong, Kabupaten Bandung Barat</td>
+                                            <td></td>
+                                            <td>https://www.instagram.com/kec.parongpong/</td>
+                                            <td>
+                                                <a href="https://bandungbaratkab.go.id/instansi/kecamatan/kecamatan-parongpong" class="btn btn-outline-success btn-sm"><i class="bi bi-eye"></i> Detail</a>
+                                            </td>
+                                        </tr>
+                                                                            <tr>
+                                            <td>3</td>
+                                            <td>Kecamatan Cisarua</td>
+                                            <td>Jalan Terusan Cisarua Padalarang No.10, Cisarua, Kab.Bandung Barat</td>
+                                            <td></td>
+                                            <td>https://www.instagram.com/kecamatancisaruakbb/</td>
+                                            <td>
+                                                <a href="https://bandungbaratkab.go.id/instansi/kecamatan/kecamatan-cisarua" class="btn btn-outline-success btn-sm"><i class="bi bi-eye"></i> Detail</a>
+                                            </td>
+                                        </tr>
+                                                                            <tr>
+                                            <td>4</td>
+                                            <td>Kecamatan Cikalongwetan</td>
+                                            <td>Jl. Raya Cikalongwetan No. 506, Cikalong Wetan, Kabupaten Bandung Barat.</td>
+                                            <td></td>
+                                            <td>https://www.instagram.com/kecamatancikalongwetan/</td>
+                                            <td>
+                                                <a href="https://bandungbaratkab.go.id/instansi/kecamatan/kecamatan-cikalongwetan" class="btn btn-outline-success btn-sm"><i class="bi bi-eye"></i> Detail</a>
+                                            </td>
+                                        </tr>
+                                                                            <tr>
+                                            <td>5</td>
+                                            <td>Kecamatan Cipeundeuy</td>
+                                            <td>Jl. Raya Cipeundeuy No.513, Cipeundeuy, Kabupaten Bandung Barat</td>
+                                            <td></td>
+                                            <td>https://www.instagram.com/keccipeundeuy/</td>
+                                            <td>
+                                                <a href="https://bandungbaratkab.go.id/instansi/kecamatan/kecamatan-cipeundeuy" class="btn btn-outline-success btn-sm"><i class="bi bi-eye"></i> Detail</a>
+                                            </td>
+                                        </tr>
+                                                                            <tr>
+                                            <td>6</td>
+                                            <td>Kecamatan Ngamprah</td>
+                                            <td>https://www.instagram.com/kecamatanngamprah/</td>
+                                            <td></td>
+                                            <td>https://linktr.ee/kec_ngamprah</td>
+                                            <td>
+                                                <a href="https://bandungbaratkab.go.id/instansi/kecamatan/kecamatan-ngamprah" class="btn btn-outline-success btn-sm"><i class="bi bi-eye"></i> Detail</a>
+                                            </td>
+                                        </tr>
+                                                                            <tr>
+                                            <td>7</td>
+                                            <td>Kecamatan Cipatat</td>
+                                            <td>Jl.Raya Cipatat No.177, Cipatat, Kec. Cipatat, Kabupaten Bandung Barat,</td>
+                                            <td></td>
+                                            <td>https://www.instagram.com/kecamatan_cipatat/</td>
+                                            <td>
+                                                <a href="https://bandungbaratkab.go.id/instansi/kecamatan/kecamatan-cipatat" class="btn btn-outline-success btn-sm"><i class="bi bi-eye"></i> Detail</a>
+                                            </td>
+                                        </tr>
+                                                                            <tr>
+                                            <td>8</td>
+                                            <td>Kecamatan Padalarang</td>
+                                            <td>Jl. Sudimampir hilir rt.01 rw.17 padalarang bandung barat, Bandung Satu, Jawa Barat, Indonesia 40553</td>
+                                            <td></td>
+                                            <td>https://linktr.ee/kecamatanpadalarang</td>
+                                            <td>
+                                                <a href="https://bandungbaratkab.go.id/instansi/kecamatan/kecamatan-padalarang" class="btn btn-outline-success btn-sm"><i class="bi bi-eye"></i> Detail</a>
+                                            </td>
+                                        </tr>
+                                                                            <tr>
+                                            <td>9</td>
+                                            <td>Kecamatan Batujajar</td>
+                                            <td>????.???????? ?????????????????? ????.145 ???????? ?????????????????? ??????????</td>
+                                            <td></td>
+                                            <td>https://www.instagram.com/kecamatanbatujajarkbb</td>
+                                            <td>
+                                                <a href="https://bandungbaratkab.go.id/instansi/kecamatan/kecamatan-batujajar" class="btn btn-outline-success btn-sm"><i class="bi bi-eye"></i> Detail</a>
+                                            </td>
+                                        </tr>
+                                                                            <tr>
+                                            <td>10</td>
+                                            <td>Kecamatan Cihampelas</td>
+                                            <td>jln.Raya Ciraden No.08, Kab.Bandung Barat</td>
+                                            <td></td>
+                                            <td>https://www.instagram.com/kecamatancihampelas.kbb/?hl=en</td>
+                                            <td>
+                                                <a href="https://bandungbaratkab.go.id/instansi/kecamatan/kecamatan-cihampelas" class="btn btn-outline-success btn-sm"><i class="bi bi-eye"></i> Detail</a>
+                                            </td>
+                                        </tr>
+                                                                            <tr>
+                                            <td>11</td>
+                                            <td>Kecamatan Cililin</td>
+                                            <td>Jl.Raya Cililin No.1 Desa Cililin, Kab.Bandung Barat</td>
+                                            <td></td>
+                                            <td>https://www.instagram.com/kecamatan.cililin/?hl=en</td>
+                                            <td>
+                                                <a href="https://bandungbaratkab.go.id/instansi/kecamatan/kecamatan-cililin" class="btn btn-outline-success btn-sm"><i class="bi bi-eye"></i> Detail</a>
+                                            </td>
+                                        </tr>
+                                                                            <tr>
+                                            <td>12</td>
+                                            <td>Kecamatan Cipongkor</td>
+                                            <td>Jl. PLTA Saguling No. 1 Sarinagen, Cipongkor</td>
+                                            <td></td>
+                                            <td>https://www.youtube.com/channel/UCM2SPfIwmF1xzNocIoX_HMQ</td>
+                                            <td>
+                                                <a href="https://bandungbaratkab.go.id/instansi/kecamatan/kecamatan-cipongkor" class="btn btn-outline-success btn-sm"><i class="bi bi-eye"></i> Detail</a>
+                                            </td>
+                                        </tr>
+                                                                            <tr>
+                                            <td>13</td>
+                                            <td>Kecamatan Rongga</td>
+                                            <td>Jl. Lebaksaat, Cibedug, Rongga, Bojongsalam, Kec. Rongga, Kabupaten Bandung Barat, Jawa Barat 40556</td>
+                                            <td></td>
+                                            <td>https://www.instagram.com/rongga.romantis/</td>
+                                            <td>
+                                                <a href="https://bandungbaratkab.go.id/instansi/kecamatan/kecamatan-rongga" class="btn btn-outline-success btn-sm"><i class="bi bi-eye"></i> Detail</a>
+                                            </td>
+                                        </tr>
+                                                                            <tr>
+                                            <td>14</td>
+                                            <td>Kecamatan Sindangkerta</td>
+                                            <td>2C53+95G, Cintakarya, Sindangkerta, Bandung Barat,</td>
+                                            <td></td>
+                                            <td>https://www.instagram.com/kec_sindangkerta/?hl=en</td>
+                                            <td>
+                                                <a href="https://bandungbaratkab.go.id/instansi/kecamatan/kecamatan-sindangkerta" class="btn btn-outline-success btn-sm"><i class="bi bi-eye"></i> Detail</a>
+                                            </td>
+                                        </tr>
+                                                                            <tr>
+                                            <td>15</td>
+                                            <td>Kecamatan Gununghalu</td>
+                                            <td>Jl. Raya Pasanggrahan No. 1, Sirnajaya, Gununghalu, Sirnajaya, Bandung Barat</td>
+                                            <td></td>
+                                            <td>https://www.instagram.com/kantor.kecamatan_gununghalu/</td>
+                                            <td>
+                                                <a href="https://bandungbaratkab.go.id/instansi/kecamatan/kecamatan-gununghalu" class="btn btn-outline-success btn-sm"><i class="bi bi-eye"></i> Detail</a>
+                                            </td>
+                                        </tr>
+                                                                            <tr>
+                                            <td>16</td>
+                                            <td>Kecamatan Saguling</td>
+                                            <td>Jl. Raya Saguling Km. 19</td>
+                                            <td></td>
+                                            <td>https://www.youtube.com/@kecamatansaguling/videos</td>
+                                            <td>
+                                                <a href="https://bandungbaratkab.go.id/instansi/kecamatan/kecamatan-saguling" class="btn btn-outline-success btn-sm"><i class="bi bi-eye"></i> Detail</a>
+                                            </td>
+                                        </tr>
+                                                                    </tbody>
+                            </table>
+</div>
+  </div>
+</section>
+
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="container footer-top-inner">
+        <div class="footer-col">
+          <h4 class="footer-heading">KABUPATEN BANDUNG BARAT</h4>
+          <ul class="footer-contact">
+            <li>
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Komplek Pemda Kabupaten Bandung Barat Jl. Raya Padalarang-Cisarua Km.2 Ngamprah</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html"><i class="fas fa-chevron-right"></i> Beranda</a></li>
+            <li><a href="pimpinan-daerah.html"><i class="fas fa-chevron-right"></i> Pimpinan Daerah</a></li>
+            <li><a href="dashboard-anggaran.html"><i class="fas fa-chevron-right"></i> Dashboard APBD</a></li>
+            <li><a href="news-article.html"><i class="fas fa-chevron-right"></i> Berita &amp; Artikel</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Media Sosial</h4>
+          <p class="footer-desc" style="margin-top:-10px; margin-bottom:14px;">Kunjungi media sosial kami dibawah ini</p>
+          <div class="footer-socials">
+            <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" title="TikTok"><i class="fab fa-tiktok"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Statistik Kunjungan</h4>
+          <div class="stats-card">
+            <div class="stats-item">
+              <span>Total Kunjungan</span>
+              <span class="stats-badge">72.762</span>
+            </div>
+            <div class="stats-item">
+              <span>Total Kunjungan Tahun Ini</span>
+              <span class="stats-badge">14.496</span>
+            </div>
+            <div class="stats-item">
+              <span>Total Kunjungan Bulan Ini</span>
+              <span class="stats-badge">7.442</span>
+            </div>
+            <div class="stats-item">
+              <span>Total Kunjungan Minggu Ini</span>
+              <span class="stats-badge">190</span>
+            </div>
+            <div class="stats-item">
+              <span>Total Kunjungan Hari Ini</span>
+              <span class="stats-badge">4</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p>&copy; 2026 Pemerintah Kabupaten Bandung Barat.</p>
+      </div>
+    </div>
+  </footer>
+
+<button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">
+  <i class="fas fa-chevron-up"></i>
+</button>
+
+<script src="script.js"></script>
+<script>
+  document.getElementById('navbar').classList.add('scrolled');
+  window.addEventListener('scroll', function() {
+    const btn = document.getElementById('backToTop');
+    if (window.scrollY > 300) btn.classList.add('visible');
+    else btn.classList.remove('visible');
+  });
+</script>
+</body>
+</html>
+
+
+
+
+
+
+

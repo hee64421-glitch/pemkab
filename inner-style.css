@@ -1,0 +1,117 @@
+/* ============================================
+   INNER PAGE STYLES
+   Kabupaten Bandung Barat
+   ============================================ */
+
+/* ---- Jumbotron (page header) ---- */
+.jumbotron {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 50%, #1e6a9a 100%);
+  background-image: url('images/kbb-vector.png'),
+                    linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 50%, #1e6a9a 100%);
+  background-size: cover, cover;
+  background-position: right center, center;
+  background-blend-mode: overlay;
+  padding: calc(var(--nav-height) + var(--top-height) + 48px) 0 48px;
+}
+
+/* ---- Breadcrumb ---- */
+.page-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+
+.page-breadcrumb a {
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.page-breadcrumb a:hover {
+  color: #fff;
+}
+
+.jumbotron h1 {
+  font-size: clamp(22px, 3.5vw, 36px);
+  font-weight: 800;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* ---- Page Detail Section ---- */
+.page-detail {
+  background: #f5f5f5;
+  padding: 48px 0 80px;
+}
+
+/* ---- Content Card ---- */
+.content-card {
+  background: #fff;
+  border-radius: 6px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.08);
+  padding: 36px 40px;
+  font-size: 15px;
+  line-height: 1.8;
+  color: #333;
+}
+
+.content-card p {
+  margin-bottom: 14px;
+}
+
+.content-card ul {
+  padding-left: 20px;
+  margin-bottom: 14px;
+}
+
+.content-card ul li {
+  margin-bottom: 6px;
+}
+
+.content-heading {
+  font-weight: 700;
+  font-size: 16px;
+  color: #222;
+  margin-bottom: 18px;
+}
+
+/* ---- Responsive Table (used in dokumen, data pages) ---- */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.table-responsive table {
+  min-width: 600px;
+}
+
+/* ============ INNER PAGE RESPONSIVE ============ */
+@media (max-width: 768px) {
+  .content-card {
+    padding: 24px 18px;
+  }
+
+  .page-detail {
+    padding: 32px 0 60px;
+  }
+}
+
+@media (max-width: 560px) {
+  /* Saat top-bar hilang, kurangi padding jumbotron */
+  .jumbotron {
+    padding-top: calc(var(--nav-height) + 32px);
+  }
+
+  .content-card {
+    padding: 20px 14px;
+    font-size: 14px;
+  }
+
+  .page-detail {
+    padding: 24px 0 48px;
+  }
+}

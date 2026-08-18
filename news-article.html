@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Artikel &amp; Berita | Kabupaten Bandung Barat</title>
+  <meta name="description" content="Kumpulan artikel dan berita Kabupaten Bandung Barat." />
+  <link href="css/inter-font.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/fontawesome.min.css">
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="inner-style.css" />
+  <style>
+    /* news-article page specific styles */
+    .content-card {
+      background: transparent;
+      box-shadow: none;
+      padding: 0;
+    }
+
+    .news-heading {
+      font-size: 24px;
+      font-weight: 700;
+      color: #333;
+      margin-bottom: 24px;
+      padding-bottom: 12px;
+      border-bottom: 2px solid var(--primary);
+      display: inline-block;
+    }
+
+    .news-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .news-card {
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .news-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+    }
+    .news-img-wrap {
+      position: relative;
+      height: 200px;
+      overflow: hidden;
+    }
+    .news-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+    .news-card:hover .news-img {
+      transform: scale(1.05);
+    }
+    .news-badge {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: #198754;
+      color: #fff;
+      font-size: 12px;
+      font-weight: 600;
+      padding: 4px 10px;
+      border-radius: 4px;
+    }
+    .news-body {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+    .news-title {
+      font-size: 16px;
+      font-weight: 700;
+      color: #222;
+      line-height: 1.4;
+      margin-bottom: 12px;
+      text-decoration: none;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .news-title:hover {
+      color: var(--primary);
+    }
+    .news-meta {
+      display: flex;
+      gap: 16px;
+      font-size: 13px;
+      color: #6c757d;
+      margin-bottom: 12px;
+    }
+    .news-meta span { display: flex; align-items: center; gap: 6px; }
+    .news-desc {
+      font-size: 14px;
+      color: #555;
+      line-height: 1.6;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      margin-bottom: 0;
+    }
+
+    @media (max-width: 992px) {
+      .news-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 576px) {
+      .news-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Top Bar -->
+<div class="top-bar">
+  <div class="container top-bar-inner">
+    <div class="top-bar-left">
+      <span id="realtimeDate"><i class="fas fa-calendar-alt"></i> Memuat tanggal...</span>
+      <span><i class="fas fa-cloud-sun"></i> Ngamprah, Jawa Barat</span>
+    </div>
+    <div class="top-bar-right">
+      <a href="#" title="Facebook" class="social-top"><i class="fab fa-facebook-f"></i></a>
+      <a href="#" title="Twitter" class="social-top"><i class="fab fa-twitter"></i></a>
+      <a href="#" title="Instagram" class="social-top"><i class="fab fa-instagram"></i></a>
+      <a href="#" title="YouTube" class="social-top"><i class="fab fa-youtube"></i></a>
+    </div>
+  </div>
+</div>
+
+<!-- Navbar -->
+<nav class="navbar scrolled" id="navbar">
+  <div class="container nav-inner">
+    <a href="index.html" class="nav-logo">
+      <img src="images/logo-white.png" alt="Logo Kabupaten Bandung Barat" style="height: 40px; width: auto; object-fit: contain;" />
+    </a>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+      <i class="fas fa-bars"></i>
+    </button>
+    <ul class="nav-menu" id="navMenu">
+      <li class="nav-item"><a href="index.html" class="nav-link">Beranda</a></li>
+      <li class="nav-item has-dropdown">
+        <a href="#" class="nav-link">Profil <i class="fas fa-chevron-down"></i></a>
+        <ul class="dropdown-menu">
+          <li><a href="visi-misi.html">Visi &amp; Misi</a></li>
+          <li><a href="sejarah.html">Sejarah</a></li>
+          <li><a href="makna-logo.html">Makna Logo</a></li>
+        </ul>
+      </li>
+      <li class="nav-item has-dropdown">
+        <a href="#" class="nav-link">Pemerintahan <i class="fas fa-chevron-down"></i></a>
+        <ul class="dropdown-menu">
+          <li><a href="pimpinan-daerah.html">Pimpinan Daerah</a></li>
+          <li><a href="perangkat-daerah.html">Perangkat Daerah</a></li>
+          <li><a href="kecamatan.html">Kecamatan</a></li>
+        </ul>
+      </li>
+      <li class="nav-item has-dropdown">
+        <a href="#" class="nav-link">Sarana &amp; Prasarana <i class="fas fa-chevron-down"></i></a>
+        <ul class="dropdown-menu">
+          <li><a href="pendidikan.html">Pendidikan</a></li>
+          <li><a href="kesehatan.html">Kesehatan</a></li>
+          <li><a href="pasar.html">Pasar</a></li>
+          <li><a href="tempat-wisata.html">Tempat Wisata</a></li>
+        </ul>
+      </li>
+      <li class="nav-item has-dropdown">
+        <a href="#" class="nav-link">Layanan Data <i class="fas fa-chevron-down"></i></a>
+        <ul class="dropdown-menu">
+          <li><a href="dashboard-anggaran.html">Dashboard APBD</a></li>
+          <li><a href="https://opendata.bandungbaratkab.go.id/">Data Statistik</a></li>
+          <li><a href="dokumen-perencanaan.html">Dokumen Perencanaan</a></li>
+          <li><a href="dokumen-anggaran.html">Dokumen Anggaran</a></li>
+          <li><a href="rlppd.html">RLPPD 2023</a></li>
+        </ul>
+      </li>
+      <li class="nav-item has-dropdown">
+        <a href="#" class="nav-link">Media Center <i class="fas fa-chevron-down"></i></a>
+        <ul class="dropdown-menu">
+          <li><a href="news-article.html">Berita</a></li>
+          <li><a href="pengumuman.html">Pengumuman</a></li>
+        </ul>
+      </li>
+      <li class="nav-item has-dropdown">
+        <a href="#" class="nav-link">Agenda <i class="fas fa-chevron-down"></i></a>
+        <ul class="dropdown-menu">
+          <li><a href="#">Kalender Agenda</a></li>
+          <li><a href="#">Pengumuman</a></li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<!-- Jumbotron -->
+<section class="jumbotron">
+  <div class="container">
+    <nav class="page-breadcrumb" aria-label="breadcrumb">
+      <a href="index.html">Beranda</a>
+      <span>&gt;</span>
+      <span>Artikel &amp; Berita</span>
+    </nav>
+    <h1>ARTIKEL &amp; BERITA</h1>
+  </div>
+</section>
+
+<!-- Page Content -->
+<section class="page-detail">
+  <div class="container">
+    <div class="content-card">
+      <h2 class="news-heading">Daftar Artikel</h2>
+
+      <div class="news-grid">
+        <!-- News 1 -->
+        <div class="news-card">
+          <div class="news-img-wrap">
+            <span class="news-badge">Lainnya</span>
+            <img src="images/news1.jpeg" alt="Thumbnail" class="news-img" />
+          </div>
+          <div class="news-body">
+            <a href="#" class="news-title">Tingkatkan Ketertiban dan Keindahan Kabupaten, Pemkab Bandung Barat Gelar Aksi Lintas Sektor Penataan Kawasan Underpass Padalarang</a>
+            <div class="news-meta">
+              <span><i class="far fa-clock"></i> 31 Juli 2026</span>
+              <span><i class="far fa-user"></i> Admin</span>
+            </div>
+            <p class="news-desc">PADALARANG, Bandung Barat &mdash; Menindaklanjuti perintah langsung Bupati Bandung Barat, Jeje Ritchie Ismail, Satuan Polisi Pamong Praja (Satpol PP) Kabupaten Bandung Barat (KBB) menggelar aksi pembersihan dan penertiban.</p>
+          </div>
+        </div>
+
+        <!-- News 2 -->
+        <div class="news-card">
+          <div class="news-img-wrap">
+            <span class="news-badge">Pemerintahan</span>
+            <img src="images/news2.jpg" alt="Thumbnail" class="news-img" />
+          </div>
+          <div class="news-body">
+            <a href="#" class="news-title">Lantik Ratusan Pejabat dan Kepala Sekolah, Bupati Jeje Ritchie Ismail Tegaskan Komitmen Penguatan Kinerja Pemkab Bandung Barat</a>
+            <div class="news-meta">
+              <span><i class="far fa-clock"></i> 30 Juli 2026</span>
+              <span><i class="far fa-user"></i> Admin</span>
+            </div>
+            <p class="news-desc">NGAMPRAH &mdash; Bupati Bandung Barat melantik ratusan pejabat struktural dan kepala sekolah dalam rangka meningkatkan kinerja birokrasi dan mutu pendidikan di wilayah Kabupaten Bandung Barat.</p>
+          </div>
+        </div>
+
+        <!-- News 3 -->
+        <div class="news-card">
+          <div class="news-img-wrap">
+            <span class="news-badge">Layanan Publik</span>
+            <img src="images/kbb-vector.png" alt="Thumbnail" class="news-img" style="background:var(--primary);"/>
+          </div>
+          <div class="news-body">
+            <a href="#" class="news-title">Optimalisasi Layanan Kependudukan di MPP Kabupaten Bandung Barat Terus Ditingkatkan</a>
+            <div class="news-meta">
+              <span><i class="far fa-clock"></i> 29 Juli 2026</span>
+              <span><i class="far fa-user"></i> Admin</span>
+            </div>
+            <p class="news-desc">Dinas Kependudukan dan Pencatatan Sipil terus melakukan optimalisasi layanan jemput bola dan layanan cepat di Mal Pelayanan Publik untuk mempermudah masyarakat mengurus administrasi kependudukan.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer">
+  <div class="footer-top">
+    <div class="container footer-top-inner">
+      <div class="footer-col">
+        <h4 class="footer-heading">KABUPATEN BANDUNG BARAT</h4>
+        <ul class="footer-contact">
+          <li>
+            <i class="fas fa-map-marker-alt"></i>
+            <span>Komplek Pemda Kabupaten Bandung Barat Jl. Raya Padalarang-Cisarua Km.2 Ngamprah</span>
+          </li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-heading">Quick Links</h4>
+        <ul class="footer-links">
+          <li><a href="index.html"><i class="fas fa-chevron-right"></i> Beranda</a></li>
+          <li><a href="pimpinan-daerah.html"><i class="fas fa-chevron-right"></i> Pimpinan Daerah</a></li>
+          <li><a href="dashboard-anggaran.html"><i class="fas fa-chevron-right"></i> Dashboard APBD</a></li>
+          <li><a href="news-article.html"><i class="fas fa-chevron-right"></i> Berita &amp; Artikel</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-heading">Media Sosial</h4>
+        <p class="footer-desc" style="margin-top:-10px; margin-bottom:14px;">Kunjungi media sosial kami dibawah ini</p>
+        <div class="footer-socials">
+          <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+          <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" title="TikTok"><i class="fab fa-tiktok"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4 class="footer-heading">Statistik Kunjungan</h4>
+        <div class="stats-card">
+          <div class="stats-item"><span>Total Kunjungan</span><span class="stats-badge">72.762</span></div>
+          <div class="stats-item"><span>Total Kunjungan Tahun Ini</span><span class="stats-badge">14.496</span></div>
+          <div class="stats-item"><span>Total Kunjungan Bulan Ini</span><span class="stats-badge">7.442</span></div>
+          <div class="stats-item"><span>Total Kunjungan Minggu Ini</span><span class="stats-badge">190</span></div>
+          <div class="stats-item"><span>Total Kunjungan Hari Ini</span><span class="stats-badge">4</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="container footer-bottom-inner">
+      <p>&copy; 2026 Pemerintah Kabupaten Bandung Barat.</p>
+    </div>
+  </div>
+</footer>
+
+<button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">
+  <i class="fas fa-chevron-up"></i>
+</button>
+
+<script src="script.js"></script>
+<script>
+  document.getElementById('navbar').classList.add('scrolled');
+  window.addEventListener('scroll', function() {
+    const btn = document.getElementById('backToTop');
+    if (window.scrollY > 300) btn.classList.add('visible');
+    else btn.classList.remove('visible');
+  });
+</script>
+</body>
+</html>

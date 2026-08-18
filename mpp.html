@@ -1,0 +1,488 @@
+<!doctype html>
+<html lang="id">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mal Pelayanan Publik Kabupaten Bandung Barat</title>
+    <link rel="icon" type="image/x-icon" class="favicon">
+    
+    
+    
+            <style>
+        body { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; }
+        .hero-bg {
+            background:
+                linear-gradient(135deg, rgba(40, 108, 124, 0.85) 0%, rgba(29, 79, 91, 0.75) 100%),
+                url('images/mpp-hero.jpg') center/cover;
+        }
+        .motto-slide {
+            background:
+                radial-gradient(circle at 30% 50%, rgba(62, 206, 213, 0.2) 0%, transparent 60%),
+                linear-gradient(135deg, #286c7c 0%, #2bb3aa 100%);
+        }
+        .motto-slider-fade .glider-slide { position: relative; }
+        .motto-slider-fade .glider-slide::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            pointer-events: none;
+            z-index: 2;
+            border-radius: 1rem;
+            background:
+                radial-gradient(circle at top left, rgba(40, 108, 124, 0.85) 0%, transparent 22%),
+                radial-gradient(circle at top right, rgba(43, 179, 170, 0.85) 0%, transparent 22%),
+                radial-gradient(circle at bottom left, rgba(40, 108, 124, 0.85) 0%, transparent 22%),
+                radial-gradient(circle at bottom right, rgba(43, 179, 170, 0.85) 0%, transparent 22%);
+        }
+    </style>
+    <link rel="stylesheet" href="css/mpp.css">
+</head>
+
+<body class="bg-gray-50 text-gray-800">
+    <nav class="bg-mpp-dark fixed top-0 inset-x-0 z-50 shadow-md">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+            <div class="flex items-center gap-8">
+                <a href="#" class="flex items-center">
+                    <img alt="MPP KBB" class="logo_mpp h-10 w-auto object-contain" onerror="this.style.visibility='hidden';">
+                </a>
+                <div class="hidden lg:flex gap-1">
+                    <a href="#" class="px-3 py-2 rounded-md text-sm font-medium bg-white/15 text-white">Beranda</a>
+                    <a href="#" class="px-3 py-2 rounded-md text-sm font-medium text-white/90 hover:bg-white/10">Daftar Layanan</a>
+                    <a href="#" class="px-3 py-2 rounded-md text-sm font-medium text-white/90 hover:bg-white/10">Daftar Instansi</a>
+                    <a href="/#profile-mpp" class="px-3 py-2 rounded-md text-sm font-medium text-white/90 hover:bg-white/10">Tentang MPP</a>
+                    <a href="#" class="px-3 py-2 rounded-md text-sm font-medium text-white/90 hover:bg-white/10">Informasi</a>
+                    <a href="#" class="px-3 py-2 rounded-md text-sm font-medium text-white/90 hover:bg-white/10">Berita</a>
+                    <a href="#" class="px-3 py-2 rounded-md text-sm font-medium text-white/90 hover:bg-white/10">Pengaduan</a>
+                </div>
+            </div>
+            <div class="flex items-center gap-2">
+                <button type="button" onclick="showLandingAnnouncements()" class="w-10 h-10 inline-flex items-center justify-center rounded-md text-white hover:bg-white/10 transition" title="Lihat Pengumuman" aria-label="Lihat Pengumuman">
+                    <i class="fas fa-bullhorn text-lg"></i>
+                </button>
+                                    <a href="#" class="hidden lg:inline-flex bg-mpp-accent hover:bg-amber-500 text-white px-4 py-2 rounded-md text-sm font-semibold items-center gap-2 transition">
+                        <i class="fas fa-right-to-bracket"></i> Login
+                    </a>
+                                <button id="menuBtn" onclick="toggleDrawer()" class="lg:hidden w-10 h-10 inline-flex items-center justify-center rounded-md text-white hover:bg-white/10 transition" aria-label="Open menu">
+                    <i class="fas fa-bars text-lg"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<!-- MOBILE DRAWER -->
+<div id="drawerOverlay" onclick="toggleDrawer()" class="fixed inset-0 bg-black/50 z-[60] opacity-0 pointer-events-none transition-opacity duration-300 lg:hidden"></div>
+<aside id="mobileDrawer" class="fixed top-0 right-0 bottom-0 w-72 max-w-[80vw] bg-mpp-dark text-white z-[70] transform translate-x-full transition-transform duration-300 ease-in-out lg:hidden flex flex-col">
+    <div class="flex items-center justify-between p-4 border-b border-white/10">
+        <div class="flex items-center gap-2">
+            <img alt="MPP KBB" class="logo_mpp h-9 w-auto object-contain" onerror="this.style.visibility='hidden';">
+            <span class="font-semibold">MPP KBB</span>
+        </div>
+        <button onclick="toggleDrawer()" class="w-9 h-9 inline-flex items-center justify-center rounded-md hover:bg-white/10" aria-label="Close menu">
+            <i class="fas fa-xmark text-lg"></i>
+        </button>
+    </div>
+    <nav class="flex-1 overflow-y-auto py-3" onclick="toggleDrawer()">
+        <a href="#" class="block px-5 py-3 text-sm font-medium bg-white/10 border-l-4 border-mpp-accent">Beranda</a>
+        <a href="#" class="block px-5 py-3 text-sm font-medium text-white/90 hover:bg-white/5 border-l-4 border-transparent">Daftar Layanan</a>
+        <a href="#" class="block px-5 py-3 text-sm font-medium text-white/90 hover:bg-white/5 border-l-4 border-transparent">Daftar Instansi</a>
+        <a href="/#profile-mpp" class="block px-5 py-3 text-sm font-medium text-white/90 hover:bg-white/5 border-l-4 border-transparent">Tentang MPP</a>
+        <a href="#" class="block px-5 py-3 text-sm font-medium text-white/90 hover:bg-white/5 border-l-4 border-transparent">Informasi</a>
+        <a href="#" class="block px-5 py-3 text-sm font-medium text-white/90 hover:bg-white/5 border-l-4 border-transparent">Berita</a>
+        <a href="#" class="block px-5 py-3 text-sm font-medium text-white/90 hover:bg-white/5 border-l-4 border-transparent">Pengaduan</a>
+    </nav>
+    <div class="p-4 border-t border-white/10">
+                    <a href="#" class="flex items-center justify-center gap-2 bg-mpp-accent hover:bg-amber-500 text-white px-4 py-3 rounded-lg text-sm font-semibold transition">
+                <i class="fas fa-right-to-bracket"></i> Login
+            </a>
+            </div>
+</aside>
+    <div class="flex justify-center items-center">
+    <div id="toast" class="hidden fixed top-5 right-5 text-white py-3 px-4 rounded-lg shadow-lg transition-opacity duration-300 opacity-0 z-[1050] max-w-xs sm:max-w-sm sm:right-5 sm:top-5 md:max-w-md lg:max-w-lg">
+        <div class="flex flex-row justify-center items-center gap-4">
+            <span class="fas fa-circle-exclamation text-lg sm:text-xl"></span>
+            <p id="toast-message" class="text-sm sm:text-base"></p>
+        </div>
+    </div>
+</div>
+    <div id="loading-overlay" class="fixed inset-0 bg-gray-800 bg-opacity-75 hidden items-center justify-center z-[1050]">
+    <div class="flex flex-col justify-center items-center">
+        <svg class="animate-spin h-12 w-12 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C6.477 0 0 6.477 0 14h4zm2 5.291A7.963 7.963 0 014 14H0c0 2.891 1.053 5.553 2.791 7.709l1.418-1.418z"></path>
+        </svg>
+        <p class="mt-4 text-white">Tunggu Sebentar...</p>
+    </div>
+</div>    <!-- HERO FULL-WIDTH DENGAN BACKGROUND IMAGE -->
+<section class="pt-16 hero-bg text-white relative">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32">
+        <div class="max-w-2xl">
+            <span class="inline-flex items-center gap-2 px-3 py-1 bg-mpp-accent/90 rounded-full text-xs font-bold mb-5 uppercase tracking-wide">
+                <i class="fas fa-star"></i> Pelayanan Publik Prima
+            </span>
+            <h1 class="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-tight mb-5 drop-shadow-lg">
+                Selamat Datang di<br>
+                <span class="text-mpp-teal">Mal Pelayanan Publik</span><br>
+                Kab. Bandung Barat
+            </h1>
+            <p class="text-white/90 text-base lg:text-lg mb-8 max-w-xl drop-shadow">
+                Penyelenggaraan pelayanan publik untuk Anda — cepat, mudah, terjangkau, dan nyaman dalam satu atap.
+            </p>
+            <div class="flex flex-wrap gap-3">
+                                    <a href="#" class="bg-mpp-accent hover:bg-amber-500 text-white px-6 py-3 rounded-lg font-semibold flex items-center gap-2 shadow-xl">
+                        <i class="fas fa-calendar-plus"></i> Booking Antrian
+                    </a>
+                                <a href="#" class="bg-white/10 hover:bg-white/20 backdrop-blur text-white px-6 py-3 rounded-lg font-semibold border border-white/30 flex items-center gap-2">
+                    <i class="fas fa-list"></i> Daftar Layanan
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- Stats chip glass-morphism overlapping -->
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-0 -mb-12 relative z-10">
+        <div class="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6 shadow-2xl">
+            <div class="grid grid-cols-3 gap-3 lg:gap-8 divide-x divide-white/20">
+                <div class="text-center px-2 lg:px-6">
+                    <div class="text-2xl lg:text-4xl font-extrabold text-white total_instansi">0</div>
+                    <div class="text-xs lg:text-sm text-white/80 mt-1">Instansi</div>
+                </div>
+                <div class="text-center px-2 lg:px-6">
+                    <div class="text-2xl lg:text-4xl font-extrabold text-white total_layanan">0</div>
+                    <div class="text-xs lg:text-sm text-white/80 mt-1">Total Layanan</div>
+                </div>
+                <div class="text-center px-2 lg:px-6">
+                    <div class="text-2xl lg:text-4xl font-extrabold text-white total_terlayani">0</div>
+                    <div class="text-xs lg:text-sm text-white/80 mt-1">Masyarakat Terlayani</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- MOTTO SLIDER SECTION -->
+<section id="motto-slider" class="pt-20 lg:pt-24 pb-16 lg:pb-20 motto-slide text-white relative overflow-hidden">
+    <div class="absolute top-0 left-0 w-72 h-72 bg-mpp-teal/10 rounded-full -translate-x-1/3 -translate-y-1/3"></div>
+    <div class="absolute bottom-0 right-0 w-96 h-96 bg-mpp-accent/10 rounded-full translate-x-1/3 translate-y-1/3"></div>
+
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 relative">
+        <div class="text-center mb-8">
+            <span class="text-mpp-teal font-semibold text-sm uppercase tracking-wide">Nilai Pelayanan Kami</span>
+            <h2 class="text-2xl lg:text-3xl font-bold mt-2">Motto Pelayanan MPP KBB</h2>
+        </div>
+
+                <div id="divHeaderSlider" class="relative my-6 lg:my-10 motto-slider-fade">
+            <div class="glider-contain">
+                <div class="glider" id="headerSlider">
+                                            <div class="max-w-full px-2">
+                            <img src="images/1741582163-15920.png" class="w-full h-auto object-cover rounded-2xl shadow-xl" alt="Slide 0">
+                        </div>
+                                            <div class="max-w-full px-2">
+                            <img src="images/1741583380-80000.png" class="w-full h-auto object-cover rounded-2xl shadow-xl" alt="Slide 1">
+                        </div>
+                                            <div class="max-w-full px-2">
+                            <img src="images/1741583391-88785.png" class="w-full h-auto object-cover rounded-2xl shadow-xl" alt="Slide 2">
+                        </div>
+                                            <div class="max-w-full px-2">
+                            <img src="images/1741583404-16203.png" class="w-full h-auto object-cover rounded-2xl shadow-xl" alt="Slide 3">
+                        </div>
+                                    </div>
+                <div class="glider-dots"></div>
+            </div>
+        </div>
+            </div>
+</section>
+
+<!-- SELAYANG PANDANG -->
+<section id="selayang-pandang" class="py-16 lg:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid lg:grid-cols-12 gap-10 items-center">
+            <div class="lg:col-span-7 order-2 lg:order-1">
+                <span class="text-mpp-teal-dark font-semibold text-sm uppercase tracking-wide">Sambutan Bupati</span>
+                <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mt-2 mb-6">Selayang Pandang</h2>
+                <div class="relative pl-6 border-l-4 border-mpp-teal">
+                    <i class="fas fa-quote-left absolute -top-2 -left-3 text-mpp-teal bg-white px-1 text-2xl"></i>
+                    <p class="text-gray-700 text-justify text-base lg:text-lg leading-relaxed selayang_pandang italic">
+                        Memuat...
+                    </p>
+                </div>
+                <div class="mt-6 flex items-center gap-4">
+                    <div class="w-14 h-14 rounded-full bg-gray-200 overflow-hidden flex items-center justify-center">
+                        <img alt="Foto Bupati" class="foto_bupati w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <i class="fas fa-user text-gray-400 text-xl" style="display:none;"></i>
+                    </div>
+                    <div>
+                        <div class="font-bold text-gray-900">Bupati Kab. Bandung Barat</div>
+                        <div class="text-sm text-gray-500">Pemimpin Daerah</div>
+                    </div>
+                </div>
+            </div>
+            <div class="lg:col-span-5 order-1 lg:order-2">
+                <div class="relative">
+                    <div class="absolute -bottom-4 -right-4 w-full h-full bg-mpp-teal/20 rounded-2xl"></div>
+                    <div class="relative bg-gray-200 aspect-[4/5] rounded-2xl overflow-hidden shadow-xl">
+                        <img alt="Foto Bupati" class="foto_bupati w-full h-full object-cover" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                        <span class="absolute inset-0 items-center justify-center text-gray-400 text-sm" style="display:none;">[ FOTO BUPATI ]</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- PROFIL MPP KBB -->
+<section id="profile-mpp" class="py-16 lg:py-24 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-12 gap-10 items-center">
+        <div class="lg:col-span-6">
+            <div class="relative">
+                <div class="absolute -bottom-4 -right-4 w-full h-full bg-mpp-teal/20 rounded-2xl"></div>
+                <div class="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-xl bg-gradient-to-br from-mpp-dark to-mpp-teal-dark">
+                    <img src="images/photo-1497366216548-37526070297c-13207.png" alt="Gedung MPP KBB" class="w-full h-full object-cover opacity-70">
+                </div>
+            </div>
+        </div>
+        <div class="lg:col-span-6">
+            <span class="text-mpp-teal-dark font-semibold text-sm uppercase tracking-wide">Tentang MPP KBB</span>
+            <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mt-2 mb-4">Pusat Layanan Publik Satu Atap</h2>
+            <p class="text-gray-700 text-justify leading-relaxed mb-4">
+                Mal Pelayanan Publik (MPP) Kabupaten Bandung Barat merupakan inisiatif Pemerintah Kabupaten Bandung Barat untuk mengintegrasikan berbagai layanan publik dari berbagai instansi di satu lokasi fisik maupun digital.
+            </p>
+            <p class="text-gray-700 text-justify leading-relaxed mb-6">
+                Dengan konsep "satu atap", masyarakat dapat mengurus berbagai keperluan administratif tanpa harus berpindah-pindah lokasi. Didukung dengan sistem antrian online dan integrasi digital, MPP KBB siap memberikan pengalaman pelayanan yang modern dan efisien.
+            </p>
+            <div class="grid grid-cols-2 gap-4">
+                <div class="bg-white rounded-xl p-4 border border-gray-100">
+                    <i class="fas fa-map-marker-alt text-mpp-teal-dark text-xl mb-2"></i>
+                    <div class="text-xs text-gray-500">Lokasi</div>
+                    <div class="text-sm font-semibold text-gray-900">Ngamprah, Padalarang</div>
+                </div>
+                <div class="bg-white rounded-xl p-4 border border-gray-100">
+                    <i class="fas fa-calendar text-mpp-teal-dark text-xl mb-2"></i>
+                    <div class="text-xs text-gray-500">Berdiri Sejak</div>
+                    <div class="text-sm font-semibold text-gray-900">5 Maret 2023</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- KEUNGGULAN MPP -->
+<section class="py-16 lg:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <span class="text-mpp-teal-dark font-semibold text-sm uppercase tracking-wide">Keunggulan</span>
+            <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mt-2">Mengapa Memilih MPP KBB?</h2>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div class="text-center p-6 rounded-2xl border border-gray-100 hover:border-mpp-teal hover:shadow-lg transition">
+                <div class="w-16 h-16 rounded-2xl bg-mpp-dark/10 text-mpp-dark flex items-center justify-center mx-auto mb-4"><i class="fas fa-bolt text-2xl"></i></div>
+                <h3 class="font-bold text-gray-900 mb-2">Cepat</h3>
+                <p class="text-sm text-gray-500">Layanan dengan estimasi waktu jelas dan sistem antrian online.</p>
+            </div>
+            <div class="text-center p-6 rounded-2xl border border-gray-100 hover:border-mpp-teal hover:shadow-lg transition">
+                <div class="w-16 h-16 rounded-2xl bg-mpp-teal-dark/10 text-mpp-teal-dark flex items-center justify-center mx-auto mb-4"><i class="fas fa-handshake text-2xl"></i></div>
+                <h3 class="font-bold text-gray-900 mb-2">Mudah</h3>
+                <p class="text-sm text-gray-500">Proses booking dan persyaratan jelas, semua di satu tempat.</p>
+            </div>
+            <div class="text-center p-6 rounded-2xl border border-gray-100 hover:border-mpp-teal hover:shadow-lg transition">
+                <div class="w-16 h-16 rounded-2xl bg-mpp-accent/15 text-mpp-accent flex items-center justify-center mx-auto mb-4"><i class="fas fa-tags text-2xl"></i></div>
+                <h3 class="font-bold text-gray-900 mb-2">Terjangkau</h3>
+                <p class="text-sm text-gray-500">Biaya transparan, banyak layanan gratis tanpa biaya tambahan.</p>
+            </div>
+            <div class="text-center p-6 rounded-2xl border border-gray-100 hover:border-mpp-teal hover:shadow-lg transition">
+                <div class="w-16 h-16 rounded-2xl bg-emerald-100 text-emerald-600 flex items-center justify-center mx-auto mb-4"><i class="fas fa-couch text-2xl"></i></div>
+                <h3 class="font-bold text-gray-900 mb-2">Nyaman</h3>
+                <p class="text-sm text-gray-500">Fasilitas modern, ruang tunggu nyaman, petugas ramah.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- ALUR PELAYANAN -->
+<section class="py-16 lg:py-24 bg-gradient-to-b from-gray-50 to-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+            <span class="text-mpp-teal-dark font-semibold text-sm uppercase tracking-wide">Proses Mudah</span>
+            <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mt-2">Bagaimana Alur Pelayanannya?</h2>
+            <p class="text-gray-500 mt-3 max-w-xl mx-auto">Hanya 3 langkah mudah untuk menyelesaikan urus Anda di MPP KBB</p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="relative bg-white rounded-2xl shadow-md p-8 border-t-4 border-mpp-teal">
+                <div class="absolute top-4 right-4 text-6xl font-extrabold text-gray-100 leading-none select-none">01</div>
+                <div class="relative">
+                    <div class="w-14 h-14 rounded-xl bg-mpp-dark/10 flex items-center justify-center mb-4">
+                        <i class="fas fa-users text-2xl text-mpp-dark"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-900 text-lg mb-2">Daftar Online</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Pilih layanan dan booking antrian dari rumah melalui website ini.</p>
+                </div>
+            </div>
+            <div class="relative bg-white rounded-2xl shadow-md p-8 border-t-4 border-mpp-teal">
+                <div class="absolute top-4 right-4 text-6xl font-extrabold text-gray-100 leading-none select-none">02</div>
+                <div class="relative">
+                    <div class="w-14 h-14 rounded-xl bg-mpp-dark/10 flex items-center justify-center mb-4">
+                        <i class="fas fa-ticket text-2xl text-mpp-dark"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-900 text-lg mb-2">Datang & Loket</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Tunjukkan kode booking di loket petugas saat antrian Anda dipanggil.</p>
+                </div>
+            </div>
+            <div class="relative bg-white rounded-2xl shadow-md p-8 border-t-4 border-mpp-teal">
+                <div class="absolute top-4 right-4 text-6xl font-extrabold text-gray-100 leading-none select-none">03</div>
+                <div class="relative">
+                    <div class="w-14 h-14 rounded-xl bg-mpp-dark/10 flex items-center justify-center mb-4">
+                        <i class="fas fa-circle-check text-2xl text-mpp-dark"></i>
+                    </div>
+                    <h3 class="font-bold text-gray-900 text-lg mb-2">Selesai</h3>
+                    <p class="text-gray-500 text-sm leading-relaxed">Layanan Anda selesai diproses. Cetak dokumen / terima hasilnya.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- DAFTAR LAYANAN -->
+<section id="services" class="py-16 lg:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-10">
+            <span class="text-mpp-teal-dark font-semibold text-sm uppercase tracking-wide">Layanan Kami</span>
+            <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mt-2">Jelajahi Daftar Layanan</h2>
+        </div>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5" id="swiper-wrapper">
+            <!-- Cards rendered via getLayanan() -->
+        </div>
+        <div class="text-center mt-8">
+            <a href="#" class="inline-flex items-center gap-2 bg-mpp-dark hover:bg-mpp-dark/90 text-white px-6 py-3 rounded-lg font-semibold text-sm">
+                Lihat Semua Layanan <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- BERITA -->
+<section id="news" class="py-16 lg:py-24 bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-10">
+            <span class="text-mpp-teal-dark font-semibold text-sm uppercase tracking-wide">Informasi Terkini</span>
+            <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mt-2">Berita & Pengumuman</h2>
+        </div>
+        <div class="grid lg:grid-cols-3 gap-6">
+            <div id="news-main" class="lg:col-span-2"></div>
+            <div id="news-list" class="space-y-4"></div>
+        </div>
+        <div class="hidden animate-pulse bg-slate-300 h-10"></div>
+        <div class="text-center mt-8">
+            <a href="#" class="inline-flex items-center gap-2 bg-mpp-dark hover:bg-mpp-dark/90 text-white px-6 py-3 rounded-lg font-semibold text-sm">
+                Lihat Semua Berita <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- CTA BANNER -->
+<section class="py-16 bg-mpp-dark relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10">
+        <div class="absolute -top-20 -right-20 w-80 h-80 rounded-full bg-mpp-teal"></div>
+        <div class="absolute -bottom-20 -left-20 w-80 h-80 rounded-full bg-mpp-accent"></div>
+    </div>
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
+        <h2 class="text-3xl lg:text-4xl font-extrabold text-white mb-4">Siap Mengurus Layanan Anda?</h2>
+        <p class="text-white/80 mb-8 max-w-xl mx-auto">Booking antrian sekarang dan nikmati pelayanan yang cepat, mudah, dan nyaman.</p>
+                    <a href="#" class="inline-flex items-center gap-2 bg-mpp-accent hover:bg-amber-500 text-white px-6 py-3 rounded-lg font-bold shadow-xl">
+                <i class="fas fa-calendar-plus"></i> Mulai Booking Sekarang
+            </a>
+            </div>
+</section>
+
+
+
+    <footer class="bg-gray-900 text-gray-300">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+            <div class="grid md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="w-10 h-10 bg-mpp-teal rounded-lg flex items-center justify-center text-white font-bold">
+                            <img class="logo_mpp w-full h-full object-contain rounded-lg" onerror="this.style.visibility='hidden';">
+                        </div>
+                        <div>
+                            <div class="font-bold text-white">MPP KBB</div>
+                            <div class="text-xs text-gray-400">Kab. Bandung Barat</div>
+                        </div>
+                    </div>
+                    <p class="text-sm text-gray-400 leading-relaxed address">Mal Pelayanan Publik Kabupaten Bandung Barat hadir untuk memberikan pelayanan prima.</p>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="#" target="_blank" class="text-gray-400 hover:text-white facebook">
+                            <i class="fa-brands fa-facebook"></i>
+                        </a>
+                        <a href="#" target="_blank" class="text-gray-400 hover:text-white instagram">
+                            <i class="fa-brands fa-instagram"></i>
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-3 text-sm">Tautan Cepat</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-white">Beranda</a></li>
+                        <li><a href="#" class="hover:text-white">Daftar Layanan</a></li>
+                        <li><a href="#" class="hover:text-white">Daftar Instansi</a></li>
+                        <li><a href="/#profile-mpp" class="hover:text-white">Tentang MPP</a></li>
+                        <li><a href="#" class="hover:text-white">Informasi</a></li>
+                        <li><a href="#" class="hover:text-white">Berita</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-3 text-sm">Kontak</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-start gap-2"><i class="fas fa-map-marker-alt mt-1"></i> <span class="address">Jl. Raya Ngamprah No.1, Padalarang</span></li>
+                        <li class="flex items-center gap-2"><i class="fas fa-phone"></i> <span class="telp">0821-2096-1216</span></li>
+                        <li class="flex items-center gap-2"><i class="fas fa-envelope"></i> <a href="#" class="email hover:text-white">mppkbb2023@gmail.com</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-semibold mb-3 text-sm">Jam Pelayanan</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li class="flex items-center justify-between"><span>Senin - Kamis</span> <span class="text-gray-400">08:00 - 16:00</span></li>
+                        <li class="flex items-center justify-between"><span>Jumat</span> <span class="text-gray-400">08:00 - 15:00</span></li>
+                        <li class="flex items-center justify-between"><span>Sabtu/Minggu</span> <span class="text-gray-400">Tutup</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="border-t border-gray-800 py-5 text-center text-xs text-gray-500">
+            © 2023 - 2026 <strong>Mal Pelayanan Publik Kab. Bandung Barat</strong>. Dikembangkan oleh DISKOMINFOTIK Kab. Bandung Barat.
+        </div>
+
+        <button id="scrollToTopBtn" class="fixed bottom-4 right-4 bg-sky-400 text-white p-2 rounded-md shadow-lg hover:bg-blue-600 transition-opacity opacity-0 pointer-events-none z-50">
+            ↑
+        </button>
+    </footer>
+
+    
+
+    <!-- ANNOUNCEMENT MODAL (landing) -->
+    <div id="announcementModalLanding" class="hidden p-2 lg:p-4 fixed inset-0 bg-black bg-opacity-50 items-center justify-center z-50">
+        <div class="bg-white rounded-lg p-6 w-full max-w-lg md:max-w-2xl lg:max-w-6xl relative max-h-[90vh] overflow-y-auto scrollbar-hide">
+            <label class="absolute top-4 left-4 flex items-center gap-2 text-xs text-gray-600 cursor-pointer select-none z-10">
+                <input type="checkbox" id="skipAnnouncementChk" class="rounded border-gray-300 text-mpp-teal-dark focus:ring-mpp-teal">
+                <span>Jangan tampilkan popup ini lagi.</span>
+            </label>
+
+            <img src="images/asset_1325558081-37202.png" alt="Logo" class="logo_mpp h-12 mx-auto mt-5 lg:mt-0">
+
+            <div id="announcementSliderLanding" class="glider mt-3"></div>
+
+            <button class="glider-prev text-white hover:text-gray-400">«</button>
+            <button class="glider-next text-white hover:text-gray-400">»</button>
+            <div class="dots"></div>
+
+            <button class="closeModal absolute top-4 right-4 text-gray-500 hover:text-gray-900">
+                <i class="fas fa-x"></i>
+            </button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
+

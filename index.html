@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Website Resmi Kab. Bandung Barat</title>
+  <meta name="description"
+    content="Website resmi Pemerintah Kabupaten Bandung Barat. Temukan informasi publik terkini dari Kabupaten Bandung Barat." />
+  <link href="css/inter-font.css" rel="stylesheet" />
+  <link rel="stylesheet" href="css/fontawesome.min.css" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="inner-style.css" />
+</head>
+
+<body>
+
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="container top-bar-inner">
+      <div class="top-bar-left">
+        <span id="realtimeDate"><i class="fas fa-calendar-alt"></i> Memuat tanggal...</span>
+        <span><i class="fas fa-cloud-sun"></i> Ngamprah, Jawa Barat</span>
+      </div>
+      <div class="top-bar-right">
+        <a href="#" title="Facebook" class="social-top"><i class="fab fa-facebook-f"></i></a>
+        <a href="#" title="Twitter" class="social-top"><i class="fab fa-twitter"></i></a>
+        <a href="#" title="Instagram" class="social-top"><i class="fab fa-instagram"></i></a>
+        <a href="#" title="YouTube" class="social-top"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="nav-logo">
+        <img src="images/logo-white.png" alt="Logo Kabupaten Bandung Barat"
+          style="height: 40px; width: auto; object-fit: contain;" />
+      </a>
+
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <ul class="nav-menu" id="navMenu">
+        <li class="nav-item"><a href="index.html" class="nav-link">Beranda</a></li>
+        <li class="nav-item has-dropdown">
+          <a href="#" class="nav-link">Profil <i class="fas fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="visi-misi.html">Visi &amp; Misi</a></li>
+            <li><a href="sejarah.html">Sejarah</a></li>
+            <li><a href="makna-logo.html">Makna Logo</a></li>
+          </ul>
+        </li>
+        <li class="nav-item has-dropdown">
+          <a href="#" class="nav-link">Pemerintahan <i class="fas fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="pimpinan-daerah.html">Pimpinan Daerah</a></li>
+            <li><a href="perangkat-daerah.html">Perangkat Daerah</a></li>
+            <li><a href="kecamatan.html">Kecamatan</a></li>
+          </ul>
+        </li>
+        <li class="nav-item has-dropdown">
+          <a href="#" class="nav-link">Sarana &amp; Prasarana <i class="fas fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="pendidikan.html">Pendidikan</a></li>
+            <li><a href="kesehatan.html">Kesehatan</a></li>
+            <li><a href="pasar.html">Pasar</a></li>
+            <li><a href="tempat-wisata.html">Tempat Wisata</a></li>
+          </ul>
+        </li>
+        <li class="nav-item has-dropdown">
+          <a href="#" class="nav-link">Layanan Data <i class="fas fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="dashboard-anggaran.html">Dashboard APBD</a></li>
+            <li><a href="https://opendata.bandungbaratkab.go.id/">Data Statistik</a></li>
+            <li><a href="dokumen-perencanaan.html">Dokumen Perencanaan</a></li>
+            <li><a href="dokumen-anggaran.html">Dokumen Anggaran</a></li>
+            <li><a href="rlppd.html">RLPPD 2023</a></li>
+          </ul>
+        </li>
+        <li class="nav-item has-dropdown">
+          <a href="#" class="nav-link">Media Center <i class="fas fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="news-article.html">Berita</a></li>
+            <li><a href="pengumuman.html">Pengumuman</a></li>
+          </ul>
+        </li>
+        <li class="nav-item has-dropdown">
+          <a href="#" class="nav-link">Agenda <i class="fas fa-chevron-down"></i></a>
+          <ul class="dropdown-menu">
+            <li><a href="#">Kalender Agenda</a></li>
+            <li><a href="#">Pengumuman</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Social Sidebar -->
+  <div class="social-sidebar">
+    <a href="#" class="social-side-link" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+    <a href="#" class="social-side-link" title="Twitter"><i class="fab fa-twitter"></i></a>
+    <a href="#" class="social-side-link" title="Instagram"><i class="fab fa-instagram"></i></a>
+    <a href="#" class="social-side-link" title="YouTube"><i class="fab fa-youtube"></i></a>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero" style="min-height: 85vh;">
+    <div class="hero-slider" id="heroSlider">
+      <div class="hero-slide active" style="background-image: url('images/slider1.jpg')"></div>
+      <div class="hero-slide" style="background-image: url('images/slider2.jpg')"></div>
+      <div class="hero-slide" style="background-image: url('images/slider3.jpg')"></div>
+    </div>
+    <div class="hero-overlay" style="background: rgba(0, 0, 0, 0.4);"></div>
+    <div class="hero-content" style="padding-top: 60px;">
+      <h1 class="hero-title" style="font-weight: 800; text-transform: uppercase; font-size: 32px; letter-spacing: 1px;">
+        SELAMAT DATANG<br>KABUPATEN BANDUNG BARAT</h1>
+      <p class="hero-subtitle" style="font-size: 18px; margin-bottom: 30px;">Temukan informasi publik terkini dari
+        Kabupaten Bandung Barat</p>
+
+      <div class="search" style="margin-bottom: 40px; display: flex; justify-content: center;">
+        <form action="#"
+          style="display: flex; align-items: center; background: #fff; padding: 4px; border-radius: 4px; width: 100%; max-width: 500px;">
+          <i class="fa fa-search" style="color: #666; padding: 0 16px;"></i>
+          <input type="text" name="q" id="heroSearchInput" placeholder="Cari informasi disini...."
+            style="border: none; outline: none; padding: 12px; flex-grow: 1; font-size: 15px;" />
+          <button
+            style="background: var(--primary); color: #fff; border: none; padding: 12px 30px; border-radius: 4px; font-weight: 600; cursor: pointer;">Cari</button>
+        </form>
+      </div>
+
+      <div class="portal-overlay"
+        style="display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; max-width: 1000px; margin: 0 auto; background: rgba(0, 0, 0, 0.2); padding: 24px; border-radius: 12px; backdrop-filter: blur(4px);">
+        <a href="https://disdukcapil.bandungbaratkab.go.id/online/login" style="text-decoration: none; width: 120px;">
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
+            <div
+              style="background: rgba(0, 105, 179, 0.6); padding: 16px; border-radius: 8px; width: 70px; height: 70px; display: flex; align-items: center; justify-content: center; transition: background 0.3s;"
+              onmouseover="this.style.background='rgba(0,105,179,0.9)'"
+              onmouseout="this.style.background='rgba(0,105,179,0.6)'">
+              <img src="images/public-service.png" />
+            </div>
+            <p style="color: #fff; font-size: 12px; text-align: center; margin: 0; font-weight: 500; line-height: 1.2;">
+              Pelayanan<br>Kependudukan</p>
+          </div>
+        </a>
+        <a href="mpp.html" style="text-decoration: none; width: 120px;">
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
+            <div
+              style="background: rgba(0, 105, 179, 0.6); padding: 16px; border-radius: 8px; width: 70px; height: 70px; display: flex; align-items: center; justify-content: center; transition: background 0.3s;"
+              onmouseover="this.style.background='rgba(0,105,179,0.9)'"
+              onmouseout="this.style.background='rgba(0,105,179,0.6)'">
+              <img src="images/social-services.png" />
+            </div>
+            <p style="color: #fff; font-size: 12px; text-align: center; margin: 0; font-weight: 500; line-height: 1.2;">
+              Pelayanan<br>Masyarakat</p>
+          </div>
+        </a>
+        <a href="bapenda.html" style="text-decoration: none; width: 120px;">
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
+            <div
+              style="background: rgba(0, 105, 179, 0.6); padding: 16px; border-radius: 8px; width: 70px; height: 70px; display: flex; align-items: center; justify-content: center; transition: background 0.3s;"
+              onmouseover="this.style.background='rgba(0,105,179,0.9)'"
+              onmouseout="this.style.background='rgba(0,105,179,0.6)'">
+              <img src="images/tax.png" />
+            </div>
+            <p style="color: #fff; font-size: 12px; text-align: center; margin: 0; font-weight: 500; line-height: 1.2;">
+              Pelayanan<br>Pajak</p>
+          </div>
+        </a>
+        <a href="sippn.html" style="text-decoration: none; width: 120px;">
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
+            <div
+              style="background: rgba(0, 105, 179, 0.6); padding: 16px; border-radius: 8px; width: 70px; height: 70px; display: flex; align-items: center; justify-content: center; transition: background 0.3s;"
+              onmouseover="this.style.background='rgba(0,105,179,0.9)'"
+              onmouseout="this.style.background='rgba(0,105,179,0.6)'">
+              <img src="images/complaint.png" />
+            </div>
+            <p style="color: #fff; font-size: 12px; text-align: center; margin: 0; font-weight: 500; line-height: 1.2;">
+              Pengaduan<br>Masyarakat</p>
+          </div>
+        </a>
+        <a href="dashboard-anggaran.html" style="text-decoration: none; width: 120px;">
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
+            <div
+              style="background: rgba(0, 105, 179, 0.6); padding: 16px; border-radius: 8px; width: 70px; height: 70px; display: flex; align-items: center; justify-content: center; transition: background 0.3s;"
+              onmouseover="this.style.background='rgba(0,105,179,0.9)'"
+              onmouseout="this.style.background='rgba(0,105,179,0.6)'">
+              <img src="images/calculation.png" />
+            </div>
+            <p style="color: #fff; font-size: 12px; text-align: center; margin: 0; font-weight: 500; line-height: 1.2;">
+              Transparansi<br>Anggaran</p>
+          </div>
+        </a>
+        <a href="visitkbb.html" style="text-decoration: none; width: 120px;">
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
+            <div
+              style="background: rgba(0, 105, 179, 0.6); padding: 16px; border-radius: 8px; width: 70px; height: 70px; display: flex; align-items: center; justify-content: center; transition: background 0.3s;"
+              onmouseover="this.style.background='rgba(0,105,179,0.9)'"
+              onmouseout="this.style.background='rgba(0,105,179,0.6)'">
+              <img src="images/destination.png" />
+            </div>
+            <p style="color: #fff; font-size: 12px; text-align: center; margin: 0; font-weight: 500; line-height: 1.2;">
+              Destinasi<br>Wisata</p>
+          </div>
+        </a>
+        <a href="jdih.html" style="text-decoration: none; width: 120px;">
+          <div style="display: flex; flex-direction: column; align-items: center; gap: 8px;">
+            <div
+              style="background: rgba(0, 105, 179, 0.6); padding: 16px; border-radius: 8px; width: 70px; height: 70px; display: flex; align-items: center; justify-content: center; transition: background 0.3s;"
+              onmouseover="this.style.background='rgba(0,105,179,0.9)'"
+              onmouseout="this.style.background='rgba(0,105,179,0.6)'">
+              <img src="images/law-book.png" />
+            </div>
+            <p style="color: #fff; font-size: 12px; text-align: center; margin: 0; font-weight: 500; line-height: 1.2;">
+              Produk<br>Hukum</p>
+          </div>
+        </a>
+      </div>
+    </div>
+
+    <!-- Slider Dots -->
+    <div class="slider-dots" id="sliderDots">
+      <button class="dot active" onclick="goToSlide(0)" aria-label="Slide 1"></button>
+      <button class="dot" onclick="goToSlide(1)" aria-label="Slide 2"></button>
+      <button class="dot" onclick="goToSlide(2)" aria-label="Slide 3"></button>
+    </div>
+  </section>
+
+  <!-- News Section -->
+  <section class="section-news" id="news">
+    <div class="container">
+      <div class="news-layout">
+
+        <!-- Berita Terkini (left) -->
+        <div class="news-main">
+          <div class="section-header-row">
+            <div class="section-title-wrap">
+              <h2 class="section-title">Berita Terkini</h2>
+              <div class="title-underline"></div>
+            </div>
+            <div class="news-nav-btns">
+              <button class="news-nav-btn" id="prevNews" onclick="prevNewsSlide()" aria-label="Previous"><i
+                  class="fas fa-chevron-left"></i></button>
+              <button class="news-nav-btn" id="nextNews" onclick="nextNewsSlide()" aria-label="Next"><i
+                  class="fas fa-chevron-right"></i></button>
+            </div>
+          </div>
+
+          <div class="news-featured" id="newsFeatured">
+            <div class="news-featured-slide active">
+              <div class="news-featured-img">
+                <img src="images/news1.jpeg" alt="Sinergi Regulasi Pertambangan" />
+              </div>
+              <div class="news-featured-body">
+                <h3 class="news-featured-title">
+                  <a href="#">Sinergi Regulasi Pertambangan: Pemda KBB Jembatani Pelaku Usaha dan Aturan
+                    Pusat-Provinsi</a>
+                </h3>
+                <div class="news-meta">
+                  <span><i class="far fa-clock"></i> 16 Juli 2026</span>
+                  <span><i class="far fa-user"></i> Admin</span>
+                  <span><i class="far fa-eye"></i> 14</span>
+                </div>
+                <p class="news-excerpt">Wakil Bupati Bandung Barat mendorong penguatan koordinasi dan keselarasan
+                  pemahaman regulasi terkini sektor pertambangan di wilayah Kabupaten Bandung Barat. Langkah ini diambil
+                  untuk memastikan aktivi...</p>
+                <a href="#" class="news-readmore">Selengkapnya... <i class="fas fa-external-link-alt"></i></a>
+              </div>
+            </div>
+            <div class="news-featured-slide">
+              <div class="news-featured-img">
+                <img src="images/news2.jpg" alt="HUT KBB ke-19" />
+              </div>
+              <div class="news-featured-body">
+                <h3 class="news-featured-title">
+                  <a href="#">HUT ke-19 KBB Digelar Bersahaja, Bupati Jeje Paparkan Tren Positif Capaian Makro
+                    Pembangunan</a>
+                </h3>
+                <div class="news-meta">
+                  <span><i class="far fa-clock"></i> 19 Juni 2026</span>
+                  <span><i class="far fa-user"></i> Admin</span>
+                  <span><i class="far fa-eye"></i> 87</span>
+                </div>
+                <p class="news-excerpt">Pemerintah Kabupaten Bandung Barat memperingati Hari Ulang Tahun ke-19 dengan
+                  penuh kebanggaan dan semangat. Bupati Jeje memaparkan berbagai capaian positif dalam bidang
+                  pembangunan daerah...</p>
+                <a href="#" class="news-readmore">Selengkapnya... <i class="fas fa-external-link-alt"></i></a>
+              </div>
+            </div>
+            <div class="news-featured-slide">
+              <div class="news-featured-img">
+                <img src="images/1686829890-84123.jpg" alt="Eceng Gondok Saguling" />
+              </div>
+              <div class="news-featured-body">
+                <h3 class="news-featured-title">
+                  <a href="#">Kepung 120 Hektar Eceng Gondok Saguling: Kang Jeje dan Kang Asep Turun Langsung</a>
+                </h3>
+                <div class="news-meta">
+                  <span><i class="far fa-clock"></i> 18 Juni 2026</span>
+                  <span><i class="far fa-user"></i> Admin</span>
+                  <span><i class="far fa-eye"></i> 87</span>
+                </div>
+                <p class="news-excerpt">Bupati dan Wakil Bupati Bandung Barat turun langsung ke lapangan untuk
+                  mengkoordinir penanganan eceng gondok yang menutupi 120 hektar kawasan Waduk Saguling. Aksi ini
+                  melibatkan ribuan relawan...</p>
+                <a href="#" class="news-readmore">Selengkapnya... <i class="fas fa-external-link-alt"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Berita Populer (right) -->
+        <div class="news-sidebar">
+          <div class="section-title-wrap">
+            <h2 class="section-title">Berita Populer</h2>
+            <div class="title-underline"></div>
+          </div>
+          <div class="popular-list">
+            <div class="popular-item">
+              <div class="popular-img">
+                <img src="images/news2.jpg" alt="KPU Tetapkan" />
+              </div>
+              <div class="popular-body">
+                <h4 class="popular-title"><a href="#">KPU Tetapkan Nomor Urut Paslon Bupati dan Wakil...</a></h4>
+                <div class="news-meta small">
+                  <span><i class="far fa-clock"></i> 24 September 2024</span>
+                  <span><i class="far fa-user"></i> Admin</span>
+                  <span><i class="far fa-eye"></i> 77.730</span>
+                </div>
+              </div>
+            </div>
+            <div class="popular-item">
+              <div class="popular-img placeholder-img"><i class="fas fa-image"></i></div>
+              <div class="popular-body">
+                <h4 class="popular-title"><a href="#">MEMPERINGATI HARI PENDIDIKAN NASIONAL</a></h4>
+                <div class="news-meta small">
+                  <span><i class="far fa-clock"></i> 2 Mei 2020</span>
+                  <span><i class="far fa-user"></i> Admin</span>
+                  <span><i class="far fa-eye"></i> 63.207</span>
+                </div>
+              </div>
+            </div>
+            <div class="popular-item">
+              <div class="popular-img placeholder-img"><i class="fas fa-image"></i></div>
+              <div class="popular-body">
+                <h4 class="popular-title"><a href="#">Pelayanan PBB Bandung Barat</a></h4>
+                <div class="news-meta small">
+                  <span><i class="far fa-clock"></i> 4 Oktober 2021</span>
+                  <span><i class="far fa-user"></i> Admin</span>
+                  <span><i class="far fa-eye"></i> 52.779</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Berita Lainnya -->
+      <div class="other-news-section">
+        <div class="section-header-row">
+          <div class="section-title-wrap">
+            <h2 class="section-title">Berita Lainnya</h2>
+            <div class="title-underline"></div>
+          </div>
+          <a href="#" class="btn-outline-sm">Selengkapnya <i class="fas fa-external-link-alt"></i></a>
+        </div>
+        <div class="other-news-grid">
+          <div class="other-news-card">
+            <div class="other-news-img" style="background-image: url('images/news1.jpeg')">
+              <div class="other-news-overlay">
+                <h4>Inspektorat KBB Rilis Hasil Evaluasi SAKIP Perangkat Daerah TA 2025, Dinas...</h4>
+                <div class="news-meta small white">
+                  <span><i class="far fa-clock"></i> 25 Juni 2026</span>
+                  <span><i class="far fa-user"></i> Admin</span>
+                  <span><i class="far fa-eye"></i> 100</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="other-news-card">
+            <div class="other-news-img" style="background-image: url('images/news2.jpg')">
+              <div class="other-news-overlay">
+                <h4>Peringati Hari Jadi ke-19, Pemkab Bandung Barat Berikan Santunan kepada 1.919 Lansia</h4>
+                <div class="news-meta small white">
+                  <span><i class="far fa-clock"></i> 19 Juni 2026</span>
+                  <span><i class="far fa-user"></i> Admin</span>
+                  <span><i class="far fa-eye"></i> 87</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="other-news-card">
+            <div class="other-news-img" style="background-image: url('images/1686829890-84123.jpg')">
+              <div class="other-news-overlay">
+                <h4>Kepung 120 Hektar Eceng Gondok Saguling: Kang Jeje dan Kang Asep Turun Langsung</h4>
+                <div class="news-meta small white">
+                  <span><i class="far fa-clock"></i> 18 Juni 2026</span>
+                  <span><i class="far fa-user"></i> Admin</span>
+                  <span><i class="far fa-eye"></i> 87</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Agenda Section -->
+  <section class="section-agenda" id="agenda">
+    <div class="container">
+      <div class="section-title-wrap">
+        <h2 class="section-title">Agenda Kab. Bandung Barat</h2>
+        <div class="title-underline"></div>
+      </div>
+      <div class="calendar-wrap">
+        <div class="calendar-header">
+          <h3 class="calendar-month" id="calMonthTitle">Juli 2026</h3>
+          <div class="calendar-nav">
+            <button class="cal-btn" id="todayBtn" onclick="goToday()">today</button>
+            <button class="cal-btn icon-btn" onclick="prevMonth()" aria-label="Previous Month"><i
+                class="fas fa-chevron-left"></i></button>
+            <button class="cal-btn icon-btn" onclick="nextMonth()" aria-label="Next Month"><i
+                class="fas fa-chevron-right"></i></button>
+          </div>
+        </div>
+        <table class="calendar-table" id="calendarTable">
+          <thead>
+            <tr>
+              <th>Min</th>
+              <th>Sen</th>
+              <th>Sel</th>
+              <th>Rab</th>
+              <th>Kam</th>
+              <th>Jum</th>
+              <th>Sab</th>
+            </tr>
+          </thead>
+          <tbody id="calendarBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portal Aplikasi Pelayanan Publik -->
+  <section class="section-apps" id="apps">
+    <div class="container">
+      <div class="section-title-wrap">
+        <h2 class="section-title">Portal Aplikasi Pelayanan Publik</h2>
+        <div class="title-underline"></div>
+      </div>
+      <div class="apps-slider-wrap">
+        <div class="apps-slider" id="appsSlider">
+          <div class="apps-slide active">
+            <div class="apps-grid">
+              <div class="app-card">
+                <h3 class="app-card-title">Open Data</h3>
+                <p class="app-card-desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur,
+                  obcaecati?</p>
+                <a href="#" class="app-card-link">Kunjungi <i class="fas fa-arrow-right"></i></a>
+              </div>
+              <div class="app-card">
+                <h3 class="app-card-title">SIDILAN</h3>
+                <p class="app-card-desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur,
+                  obcaecati?</p>
+                <a href="#" class="app-card-link">Kunjungi <i class="fas fa-arrow-right"></i></a>
+              </div>
+              <div class="app-card">
+                <h3 class="app-card-title">PPID</h3>
+                <p class="app-card-desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur,
+                  obcaecati?</p>
+                <a href="#" class="app-card-link">Kunjungi <i class="fas fa-arrow-right"></i></a>
+              </div>
+              <div class="app-card">
+                <h3 class="app-card-title">Mall Pelayanan Publik</h3>
+                <p class="app-card-desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur,
+                  obcaecati?</p>
+                <a href="#" class="app-card-link">Kunjungi <i class="fas fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="apps-slide">
+            <div class="apps-grid">
+              <div class="app-card">
+                <h3 class="app-card-title">e-Perizinan</h3>
+                <p class="app-card-desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur,
+                  obcaecati?</p>
+                <a href="#" class="app-card-link">Kunjungi <i class="fas fa-arrow-right"></i></a>
+              </div>
+              <div class="app-card">
+                <h3 class="app-card-title">LAPOR!</h3>
+                <p class="app-card-desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur,
+                  obcaecati?</p>
+                <a href="#" class="app-card-link">Kunjungi <i class="fas fa-arrow-right"></i></a>
+              </div>
+              <div class="app-card">
+                <h3 class="app-card-title">SIMPEG</h3>
+                <p class="app-card-desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur,
+                  obcaecati?</p>
+                <a href="#" class="app-card-link">Kunjungi <i class="fas fa-arrow-right"></i></a>
+              </div>
+              <div class="app-card">
+                <h3 class="app-card-title">e-Sakip</h3>
+                <p class="app-card-desc">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Consequatur,
+                  obcaecati?</p>
+                <a href="#" class="app-card-link">Kunjungi <i class="fas fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="apps-dots" id="appsDots">
+          <button class="dot active" onclick="goAppsSlide(0)" aria-label="Apps slide 1"></button>
+          <button class="dot" onclick="goAppsSlide(1)" aria-label="Apps slide 2"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Dokumen Publik -->
+  <section class="section-docs" id="docs">
+    <div class="container">
+      <div class="section-header-row">
+        <div class="section-title-wrap">
+          <h2 class="section-title">Dokumen Publik</h2>
+          <div class="title-underline"></div>
+        </div>
+        <a href="#" class="btn-outline-sm">Selengkapnya <i class="fas fa-external-link-alt"></i></a>
+      </div>
+      <div class="docs-grid">
+        <div class="doc-card">
+          <div class="doc-img">
+            <img src="images/doc_keuangan.png" alt="Dokumen Keuangan" />
+            <span class="doc-badge keuangan">Keuangan</span>
+          </div>
+          <div class="doc-body">
+            <h4 class="doc-title">Peraturan Daerah Nomor 7 Tahun 2025 tentang APBD TA...</h4>
+            <a href="#" class="btn-download"><i class="fas fa-download"></i> Unduh</a>
+          </div>
+        </div>
+        <div class="doc-card">
+          <div class="doc-img">
+            <img src="images/doc_keuangan.png" alt="Dokumen Keuangan" />
+            <span class="doc-badge keuangan">Keuangan</span>
+          </div>
+          <div class="doc-body">
+            <h4 class="doc-title">Lampiran Peraturan Daerah Nomor 7 Tahun 2025 tentang...</h4>
+            <a href="#" class="btn-download"><i class="fas fa-download"></i> Unduh</a>
+          </div>
+        </div>
+        <div class="doc-card">
+          <div class="doc-img">
+            <img src="images/doc_keuangan.png" alt="Dokumen Keuangan" />
+            <span class="doc-badge keuangan">Keuangan</span>
+          </div>
+          <div class="doc-body">
+            <h4 class="doc-title">Ringkasan Laporan Penyelenggaraan Pemerintaha...</h4>
+            <a href="#" class="btn-download"><i class="fas fa-download"></i> Unduh</a>
+          </div>
+        </div>
+        <div class="doc-card">
+          <div class="doc-img">
+            <img src="images/doc_keuangan.png" alt="Dokumen Keuangan" />
+            <span class="doc-badge keuangan">Keuangan</span>
+          </div>
+          <div class="doc-body">
+            <h4 class="doc-title">Perda APBD 2025</h4>
+            <a href="#" class="btn-download"><i class="fas fa-download"></i> Unduh</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Portal Video -->
+  <section class="section-video" id="video">
+    <div class="container">
+      <div class="section-header-row">
+        <div class="section-title-wrap">
+          <h2 class="section-title">Portal Video</h2>
+          <div class="title-underline"></div>
+        </div>
+        <a href="#" class="btn-outline-sm">Selengkapnya <i class="fas fa-external-link-alt"></i></a>
+      </div>
+      <div class="video-grid">
+        <div class="video-card" onclick="openVideoModal('#')">
+          <div class="video-thumb">
+            <img src="images/1686834338-21413.jpg" alt="Video KBB" />
+            <div class="play-btn"><i class="fas fa-play"></i></div>
+          </div>
+          <div class="video-info">
+            <h4>HUT ke-19 Kabupaten Bandung Barat 2026</h4>
+            <span class="video-date"><i class="far fa-clock"></i> 19 Juni 2026</span>
+          </div>
+        </div>
+        <div class="video-card" onclick="openVideoModal('#')">
+          <div class="video-thumb">
+            <img src="images/news2.jpg" alt="Video KBB" />
+            <div class="play-btn"><i class="fas fa-play"></i></div>
+          </div>
+          <div class="video-info">
+            <h4>Gala Dinner HUT KBB ke-19 Bupati Jeje</h4>
+            <span class="video-date"><i class="far fa-clock"></i> 18 Juni 2026</span>
+          </div>
+        </div>
+        <div class="video-card" onclick="openVideoModal('#')">
+          <div class="video-thumb">
+            <img src="images/1686829890-84123.jpg" alt="Video KBB" />
+            <div class="play-btn"><i class="fas fa-play"></i></div>
+          </div>
+          <div class="video-info">
+            <h4>Penanganan Eceng Gondok Waduk Saguling</h4>
+            <span class="video-date"><i class="far fa-clock"></i> 17 Juni 2026</span>
+          </div>
+        </div>
+        <div class="video-card" onclick="openVideoModal('#')">
+          <div class="video-thumb">
+            <img src="images/news1.jpeg" alt="Video KBB" />
+            <div class="play-btn"><i class="fas fa-play"></i></div>
+          </div>
+          <div class="video-info">
+            <h4>Sosialisasi Regulasi Pertambangan KBB 2026</h4>
+            <span class="video-date"><i class="far fa-clock"></i> 16 Juli 2026</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="container footer-top-inner">
+        <div class="footer-col">
+          <h4 class="footer-heading">KABUPATEN BANDUNG BARAT</h4>
+          <ul class="footer-contact">
+            <li>
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Komplek Pemda Kabupaten Bandung Barat Jl. Raya Padalarang-Cisarua Km.2 Ngamprah</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html"><i class="fas fa-chevron-right"></i> Beranda</a></li>
+            <li><a href="pimpinan-daerah.html"><i class="fas fa-chevron-right"></i> Pimpinan Daerah</a></li>
+            <li><a href="dashboard-anggaran.html"><i class="fas fa-chevron-right"></i> Dashboard APBD</a></li>
+            <li><a href="news-article.html"><i class="fas fa-chevron-right"></i> Berita &amp; Artikel</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Media Sosial</h4>
+          <p class="footer-desc" style="margin-top:-10px; margin-bottom:14px;">Kunjungi media sosial kami dibawah ini
+          </p>
+          <div class="footer-socials">
+            <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" title="Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" title="TikTok"><i class="fab fa-tiktok"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4 class="footer-heading">Statistik Kunjungan</h4>
+          <div class="stats-card">
+            <div class="stats-item">
+              <span>Total Kunjungan</span>
+              <span class="stats-badge">72.762</span>
+            </div>
+            <div class="stats-item">
+              <span>Total Kunjungan Tahun Ini</span>
+              <span class="stats-badge">14.496</span>
+            </div>
+            <div class="stats-item">
+              <span>Total Kunjungan Bulan Ini</span>
+              <span class="stats-badge">7.442</span>
+            </div>
+            <div class="stats-item">
+              <span>Total Kunjungan Minggu Ini</span>
+              <span class="stats-badge">190</span>
+            </div>
+            <div class="stats-item">
+              <span>Total Kunjungan Hari Ini</span>
+              <span class="stats-badge">4</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p>&copy; 2026 Pemerintah Kabupaten Bandung Barat.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Video Modal -->
+  <div class="video-modal" id="videoModal" onclick="closeVideoModal(event)">
+    <div class="video-modal-box">
+      <button class="video-modal-close" onclick="closeVideoModal()" aria-label="Close"><i
+          class="fas fa-times"></i></button>
+      <div class="video-modal-frame">
+        <iframe id="videoIframe" src="" frameborder="0" allowfullscreen allow="autoplay; encrypted-media"></iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- Back to Top -->
+  <button class="back-to-top" id="backToTop" onclick="window.scrollTo({top:0,behavior:'smooth'})"
+    aria-label="Back to top">
+    <i class="fas fa-chevron-up"></i>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
